@@ -6,10 +6,10 @@ body {
     display: grid;
     column-gap: 10px;
     row-gap: 10px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
 
-    width: 700px;
-    height: 700px;
+    min-width: 700px;
+    min-height: 700px;
 }
 .entry {
     /* background-color: aquamarine; */
