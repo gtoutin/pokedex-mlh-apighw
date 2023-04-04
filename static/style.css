@@ -12,7 +12,6 @@ body {
     min-height: 700px;
 }
 .entry {
-    /* background-color: aquamarine; */
     border: 3px solid blue;
     display: flex;
     justify-content: center;
