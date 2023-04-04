@@ -9,18 +9,13 @@
 </head>
 <body>
     <h1>Pokédex</h1>
+    <p>{{data}}</p>
     <div class="pokedex">
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
-        <div class="entry">pikachu</div>
+        {% for pokemon in data %}
+        <div class="entry">
+            <h2 style="color: {{ pokemon['pokemon_v2_pokemoncolor']['name'] }};">{{pokemon['name']}}</h2>
+        </div>
+        {% endfor %}
     </div>
 </body>
 </html>

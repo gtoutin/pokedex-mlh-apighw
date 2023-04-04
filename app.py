@@ -54,6 +54,27 @@ query ColorQuery {
 
 app = Flask(__name__)
 
+response = {
+  "data": {
+    "pokemon_v2_pokemonspecies": [
+      {
+        "name": "bulbasaur",
+        "pokemon_v2_pokemoncolor": {
+          "name": "green"
+        }
+      },
+      {
+        "name": "charmander",
+        "pokemon_v2_pokemoncolor": {
+          "name": "red"
+        }
+      },
+      {
+        "name": "squirtle",
+        "pokemon_v2_pokemoncolor": {
+          "name": "blue"
+        }
+      }]}}
 
 @app.route('/', methods=['GET'])
 def homepage():
@@ -62,7 +83,9 @@ def homepage():
     # response = requests.post('https://beta.pokeapi.co/graphql/v1beta', json={'query': color_query})
     # if not response.ok:
     # return render_template('oops.html')
-    return render_template('index.html')
+    # data=response.json().get("data", {}).get("pokemon_v2_pokemonspecies", {})
+    data=response.get("data", {}).get("pokemon_v2_pokemonspecies", {})
+    return render_template('index.html', data=data)
 
 
 if __name__ == '__main__':
